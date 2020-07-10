@@ -13,12 +13,30 @@ body {
 	width: 100vw;
 	height: 100vh;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	background: url('./robot.gif');
 	background-size: contain;
 	background-position: left center;
 	background-repeat: no-repeat
+}
+
+.container #textarea {
+	margin: 8px 0;
+	padding: 12px 20px;
+	box-sizing: border-box;
+	border-radius: 5px;
+	background-color: whitesmoke;
+	max-width: 200px;
+	box-shadow: 2px 2px 20px 10px rgba(0, 0, 0, 0.2);
+	font-family: 'Courier New', 'Courier New', Courier, monospace;
+	font-size: 19px
+}
+
+.container div {
+	display: flex;
+	align-items: center;
 }
 
 button {
@@ -36,8 +54,14 @@ button {
 	cursor: pointer
 }
 
-#button-replay {
+#replay, #copy {
 	width: auto;
+}
+
+#copy {
+	background-color: whitesmoke;
+	color: black;
+	font-weight: bolder;
 }
 
 button:hover {
@@ -54,7 +78,6 @@ button:disabled {
 }
 
 /* Tablet or Smaller */
-
 @media screen and (max-width: 1000px) {
 	.container {
 		background-position: center center;

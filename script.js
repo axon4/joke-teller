@@ -1,6 +1,8 @@
-const jokeButton = document.getElementById('button-joke');
-const replayButton = document.getElementById('button-replay');
-const audio = document.getElementById('audio');
+const jokeButton = document.getElementById('joke');
+const replayButton = document.getElementById('replay');
+const audio = document.getElementsByTagName('audio')[0];
+const textarea = document.getElementById('textarea');
+const copyButton = document.getElementById('copy');
 
 // Pass joke to VoiceRSS API
 function tellMe(joke) {
@@ -15,15 +17,18 @@ function tellMe(joke) {
 	});
 };
 
-function toggleButtons(heard=true, replay=false) {
+function toggleButtons(heard, replay=false) {
 	jokeButton.disabled = !jokeButton.disabled;
 	replayButton.disabled = !replayButton.disabled;
 
 	if (!heard) {
 		replayButton.hidden = true;
-	};
-	if (heard && replay) {
+		textarea.hidden = true;
+		copyButton.hidden = true;
+	} else if (heard && replay) {
 		replayButton.hidden = false;
+		textarea.hidden = false;
+		copyButton.hidden = false;
 	};
 };
 
@@ -42,8 +47,23 @@ async function getJokes() {
 		};
 
 		tellMe(joke);
+		textarea.innerText = joke;
 	} catch (error) {
 		console.log('Error Getting Jokes:', error);
+	};
+};
+
+function copy() {
+	if (document.selection) {
+		let range = document.body.createTextRange();
+		range.moveToElementText(textarea);
+		range.select().createTextRange();
+		document.execCommand("copy");
+	} else if (window.getSelection) {
+		let range = document.createRange();
+		range.selectNode(textarea);
+		window.getSelection().addRange(range);
+		document.execCommand("copy");
 	};
 };
 
@@ -56,3 +76,4 @@ replayButton.addEventListener('click', () => {
 	audio.play();
 	toggleButtons(true);
 });
+copyButton.addEventListener('click', copy);

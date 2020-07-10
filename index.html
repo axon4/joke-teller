@@ -9,9 +9,15 @@
 	</head>
 	<body>
 		<div class='container'>
-			<button id='button-joke'>Tell Me A Joke</button>
-			<button id='button-replay' hidden>🔄️</button>
-			<audio id='audio' hidden></audio>
+			<div>
+				<button id='joke'>Tell Me A Joke</button>
+				<button id='replay' hidden>🔄️</button>
+				<audio hidden></audio>
+			</div>
+			<div>
+				<div id='textarea' contenteditable='false' hidden></div>
+				<button id='copy' hidden>⎘</button>
+			</div>
 		</div>
 		<script src='voicerss.js'></script>
 		<script src='script.js'></script>
