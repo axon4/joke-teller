@@ -1,7 +1,8 @@
-# Joke Teller
+# Joke-Teller
 
-* Destress with a joke or two with this joke teller.
-* Replay button if you want to hear the joke again, and a copy button to add to clipboard.
+* deStress with monoTone text-to-speech--jokes
+* rePlay funny jokes you want to hear aGain
+* copy joke-text to clipBoard
 
 ## Stack
 

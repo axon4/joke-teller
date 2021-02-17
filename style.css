@@ -1,12 +1,12 @@
-/* ROBOT.GIF from Giphy - https://giphy.com/gifs/robot-cinema-4d-eyedesyn-3o7abtn7DuREEpsyWY */
+/* ROBOT.GIF from Giphy: https://giphy.com/gifs/robot-cinema-4d-eyedesyn-3o7abtn7DuREEpsyWY */
 
 html {
-	box-sizing: border-box
+	box-sizing: border-box;
 }
 
 body {
 	margin: 0;
-	background-color: #45BADD
+	background-color: #45BADD;
 }
 
 .container {
@@ -16,10 +16,10 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background: url('./robot.gif');
+	background: url('robot.gif');
 	background-size: contain;
 	background-position: left center;
-	background-repeat: no-repeat
+	background-repeat: no-repeat;
 }
 
 .container #textarea {
@@ -31,7 +31,7 @@ body {
 	max-width: 200px;
 	box-shadow: 2px 2px 20px 10px rgba(0, 0, 0, 0.2);
 	font-family: 'Courier New', 'Courier New', Courier, monospace;
-	font-size: 19px
+	font-size: 19px;
 }
 
 .container div {
@@ -51,7 +51,7 @@ button {
 	font-family: 'Courier New', 'Courier New', Courier, monospace;
 	font-size: 20px;
 	color: white;
-	cursor: pointer
+	cursor: pointer;
 }
 
 #replay, #copy {
@@ -65,26 +65,26 @@ button {
 }
 
 button:hover {
-	filter: brightness(95%)
+	filter: brightness(95%);
 }
 
 button:active {
-	transform: scale(0.98)
+	transform: scale(0.98);
 }
 
 button:disabled {
 	filter: brightness(30%);
-	cursor: progress
+	cursor: progress;
 }
 
-/* Tablet or Smaller */
+/* tablet or smaller */
 @media screen and (max-width: 1000px) {
 	.container {
 		background-position: center center;
-		background-size: cover
+		background-size: cover;
 	}
 
 	button {
-		box-shadow: 5px 5px 30px 20px rgba(0, 0, 0, 0.5)
+		box-shadow: 5px 5px 30px 20px rgba(0, 0, 0, 0.5);
 	}
 }
